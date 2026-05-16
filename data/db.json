@@ -1,0 +1,148 @@
+{
+  "users": [
+    {
+      "id": "u_admin",
+      "name": "NaijaShield Admin",
+      "email": "admin@naijashield.ng",
+      "password": "admin123",
+      "role": "admin",
+      "companyId": null
+    },
+    {
+      "id": "u_client",
+      "name": "Demo Client",
+      "email": "client@example.com",
+      "password": "client123",
+      "role": "client",
+      "companyId": "c_acme"
+    },
+    {
+      "id": "u_fb5e810d",
+      "name": "New Client",
+      "email": "newclient658314003@example.com",
+      "password": "client123",
+      "role": "client",
+      "companyId": "c_7ed35f71"
+    },
+    {
+      "id": "u_52597c40",
+      "name": "Test Client",
+      "email": "testclient218269975@example.com",
+      "password": "client123",
+      "role": "client",
+      "companyId": "c_4f49b3b6"
+    }
+  ],
+  "companies": [
+    {
+      "id": "c_acme",
+      "name": "Acme Finance Ltd",
+      "industry": "Banking",
+      "plan": "ShieldOps",
+      "securityScore": 78,
+      "compliance": "In Progress",
+      "nextReview": "2026-06-12"
+    },
+    {
+      "id": "c_oil",
+      "name": "Delta Energy Group",
+      "industry": "Oil & Gas",
+      "plan": "ShieldEnterprise",
+      "securityScore": 84,
+      "compliance": "Monitored",
+      "nextReview": "2026-06-25"
+    },
+    {
+      "id": "c_7ed35f71",
+      "name": "New Client Ltd",
+      "industry": "Technology",
+      "plan": "ShieldStart",
+      "securityScore": 50,
+      "compliance": "Onboarding",
+      "nextReview": "2026-05-29"
+    },
+    {
+      "id": "c_4f49b3b6",
+      "name": "Test Client Ltd",
+      "industry": "Technology",
+      "plan": "ShieldStart",
+      "securityScore": 50,
+      "compliance": "Onboarding",
+      "nextReview": "2026-05-29"
+    }
+  ],
+  "requests": [
+    {
+      "id": "r_1001",
+      "companyId": "c_acme",
+      "service": "Penetration Testing",
+      "priority": "High",
+      "status": "Scheduled",
+      "summary": "External web application test for customer portal.",
+      "createdAt": "2026-05-10"
+    },
+    {
+      "id": "r_5a13d19c",
+      "companyId": "c_acme",
+      "service": "Penetration Testing",
+      "priority": "Medium",
+      "status": "New",
+      "summary": "gghg",
+      "createdAt": "2026-05-15"
+    }
+  ],
+  "tickets": [
+    {
+      "id": "t_2001",
+      "companyId": "c_acme",
+      "subject": "Suspicious email campaign",
+      "status": "Open",
+      "severity": "Medium",
+      "message": "Several users reported a payroll-themed phishing email.",
+      "createdAt": "2026-05-12"
+    }
+  ],
+  "reports": [
+    {
+      "id": "rep_3001",
+      "companyId": "c_acme",
+      "title": "May Security Posture Review",
+      "type": "Security Assessment",
+      "status": "Ready",
+      "publishedAt": "2026-05-13",
+      "summary": "Improved endpoint hygiene, pending MFA rollout across privileged accounts."
+    }
+  ],
+  "activity": [
+    {
+      "id": "a_1",
+      "companyId": "c_acme",
+      "message": "SOC team reviewed suspicious email headers.",
+      "createdAt": "2026-05-13 09:30"
+    },
+    {
+      "id": "a_2",
+      "companyId": "c_acme",
+      "message": "Penetration testing kickoff scheduled.",
+      "createdAt": "2026-05-13 15:10"
+    },
+    {
+      "id": "a_b22e7c37",
+      "companyId": "c_acme",
+      "message": "New Penetration Testing request submitted.",
+      "createdAt": "2026-05-15 00:14"
+    },
+    {
+      "id": "a_96e5f5f4",
+      "companyId": "c_7ed35f71",
+      "message": "Client onboarding account created.",
+      "createdAt": "2026-05-15 01:02"
+    },
+    {
+      "id": "a_8d1a9317",
+      "companyId": "c_4f49b3b6",
+      "message": "Client onboarding account created.",
+      "createdAt": "2026-05-15 01:07"
+    }
+  ]
+}

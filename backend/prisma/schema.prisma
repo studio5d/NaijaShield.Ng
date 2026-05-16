@@ -1,0 +1,233 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  CLIENT
+  ADMIN
+}
+
+enum ClientTeamRole {
+  VIEWER
+  MANAGER
+  BILLING
+  SECURITY_LEAD
+}
+
+enum TicketStatus {
+  OPEN
+  IN_PROGRESS
+  RESOLVED
+  CLOSED
+}
+
+enum Priority {
+  LOW
+  MEDIUM
+  HIGH
+  CRITICAL
+}
+
+enum ServiceRequestType {
+  PENETRATION_TESTING
+  INCIDENT_RESPONSE
+  SECURITY_ASSESSMENT
+  FORENSICS
+  COMPLIANCE_AUDIT
+}
+
+enum ServiceRequestStatus {
+  NEW
+  TRIAGING
+  ASSIGNED
+  IN_PROGRESS
+  DELIVERED
+  COMPLETED
+  CANCELLED
+}
+
+enum ReportSeverity {
+  INFO
+  LOW
+  MEDIUM
+  HIGH
+  CRITICAL
+}
+
+enum SubscriptionStatus {
+  ACTIVE
+  TRIALING
+  PAST_DUE
+  CANCELLED
+}
+
+enum NotificationType {
+  TICKET_UPDATE
+  REPORT_UPLOAD
+  SECURITY_SCORE_CHANGE
+  SUBSCRIPTION_REMINDER
+  MESSAGE
+}
+
+model User {
+  id              String          @id @default(cuid())
+  email           String          @unique
+  passwordHash    String
+  role            Role            @default(CLIENT)
+  teamRole        ClientTeamRole?  @default(VIEWER)
+  name            String
+  isActive        Boolean         @default(true)
+  clientCompanyId String?
+  clientCompany   ClientCompany?  @relation(fields: [clientCompanyId], references: [id], onDelete: SetNull)
+  tickets         Ticket[]        @relation("CreatedTickets")
+  comments        TicketComment[]
+  notifications   Notification[]
+  auditLogs        AuditLog[]
+  createdAt       DateTime        @default(now())
+  updatedAt       DateTime        @updatedAt
+}
+
+model ClientCompany {
+  id                    String                 @id @default(cuid())
+  name                  String
+  industry              String
+  size                  String?
+  contactEmail          String
+  accountManager        String?
+  postureSummary        String?
+  users                 User[]
+  tickets               Ticket[]
+  serviceRequests       ServiceRequest[]
+  reports               Report[]
+  scoreHistory          SecurityScoreHistory[]
+  subscriptions         Subscription[]
+  notifications         Notification[]
+  auditLogs             AuditLog[]
+  createdAt             DateTime               @default(now())
+  updatedAt             DateTime               @updatedAt
+}
+
+model Ticket {
+  id              String          @id @default(cuid())
+  clientCompanyId String
+  createdByUserId String
+  title           String
+  description     String
+  priority        Priority        @default(MEDIUM)
+  status          TicketStatus    @default(OPEN)
+  attachments     String[]        @default([])
+  slaDueAt        DateTime?
+  clientCompany   ClientCompany   @relation(fields: [clientCompanyId], references: [id], onDelete: Cascade)
+  createdBy       User            @relation("CreatedTickets", fields: [createdByUserId], references: [id])
+  comments        TicketComment[]
+  createdAt       DateTime        @default(now())
+  updatedAt       DateTime        @updatedAt
+}
+
+model TicketComment {
+  id        String   @id @default(cuid())
+  ticketId  String
+  userId    String
+  body      String
+  internal  Boolean  @default(false)
+  ticket    Ticket   @relation(fields: [ticketId], references: [id], onDelete: Cascade)
+  user      User     @relation(fields: [userId], references: [id])
+  createdAt DateTime @default(now())
+}
+
+model ServiceRequest {
+  id              String               @id @default(cuid())
+  clientCompanyId String
+  type            ServiceRequestType
+  description     String
+  status          ServiceRequestStatus @default(NEW)
+  assignedAnalyst String?
+  timeline        Json?
+  deliverables    Json?
+  comments        Json?
+  priority        Priority             @default(MEDIUM)
+  clientCompany   ClientCompany        @relation(fields: [clientCompanyId], references: [id], onDelete: Cascade)
+  createdAt       DateTime             @default(now())
+  updatedAt       DateTime             @updatedAt
+}
+
+model Report {
+  id              String         @id @default(cuid())
+  clientCompanyId String
+  title           String
+  description     String?
+  type            String
+  severity        ReportSeverity @default(INFO)
+  filePath        String
+  uploadedBy      String
+  clientCompany   ClientCompany  @relation(fields: [clientCompanyId], references: [id], onDelete: Cascade)
+  createdAt       DateTime       @default(now())
+}
+
+model SecurityScoreHistory {
+  id              String        @id @default(cuid())
+  clientCompanyId String
+  score           Int
+  notes           String?
+  clientCompany   ClientCompany @relation(fields: [clientCompanyId], references: [id], onDelete: Cascade)
+  calculatedAt    DateTime      @default(now())
+}
+
+model Subscription {
+  id              String             @id @default(cuid())
+  clientCompanyId String
+  plan            String
+  status          SubscriptionStatus @default(ACTIVE)
+  renewalDate     DateTime
+  startDate       DateTime           @default(now())
+  endDate         DateTime?
+  paymentHistory  Json?
+  invoices        Json?
+  clientCompany   ClientCompany      @relation(fields: [clientCompanyId], references: [id], onDelete: Cascade)
+}
+
+model Notification {
+  id              String           @id @default(cuid())
+  clientCompanyId String
+  userId          String?
+  type            NotificationType
+  title           String
+  message         String
+  readAt          DateTime?
+  clientCompany   ClientCompany    @relation(fields: [clientCompanyId], references: [id], onDelete: Cascade)
+  user            User?            @relation(fields: [userId], references: [id], onDelete: SetNull)
+  createdAt       DateTime         @default(now())
+}
+
+model AuditLog {
+  id              String         @id @default(cuid())
+  userId          String?
+  clientCompanyId String?
+  action          String
+  entityType      String
+  entityId        String?
+  metadata        Json?
+  ipAddress       String?
+  userAgent       String?
+  user            User?          @relation(fields: [userId], references: [id], onDelete: SetNull)
+  clientCompany   ClientCompany? @relation(fields: [clientCompanyId], references: [id], onDelete: Cascade)
+  createdAt       DateTime       @default(now())
+}
+
+model KnowledgeBaseArticle {
+  id          String   @id @default(cuid())
+  title       String
+  slug        String   @unique
+  category    String
+  summary     String
+  body        String
+  tags        String[] @default([])
+  published   Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}

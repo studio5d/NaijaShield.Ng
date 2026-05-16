@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#081120" />
+    <meta name="description" content="NaijaShield Technologies delivers premium cybersecurity services and a secure cyber client portal." />
+    <title>NaijaShield | Protecting Africa's Digital Future</title>
+    <link rel="icon" href="Img/logo.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="particles" aria-hidden="true">
+      <span style="left:10%; animation-duration:18s"></span>
+      <span style="left:20%; animation-duration:22s"></span>
+      <span style="left:35%; animation-duration:16s"></span>
+      <span style="left:48%; animation-duration:26s"></span>
+      <span style="left:60%; animation-duration:19s"></span>
+      <span style="left:75%; animation-duration:21s"></span>
+      <span style="left:90%; animation-duration:17s"></span>
+    </div>
+
+    <header class="site-header">
+      <a class="logo" href="/">
+        <img src="Img/logo.png" alt="NaijaShield Technologies Logo" />
+        <span>NaijaShield</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="/#home">Home</a>
+        <a href="/#services">Services</a>
+        <a href="/#about">About</a>
+        <a href="/#industries">Industries</a>
+        <a href="/#solutions">Solutions</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#contact">Contact</a>
+        <button class="toggle-btn" type="button" data-theme-toggle>Light Mode</button>
+        <div class="signin-menu">
+          <button class="btn primary signin-trigger" id="openLogin" type="button">Sign in</button>
+          <div class="signin-dropdown">
+            <a href="/client"><i class="fa-solid fa-building-shield"></i> Client Portal</a>
+            <a href="/admin"><i class="fa-solid fa-user-tie"></i> Admin Portal</a>
+            <a href="/register"><i class="fa-solid fa-user-plus"></i> Register Client</a>
+          </div>
+        </div>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu"><i class="fa-solid fa-bars"></i></button>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <div class="mobile-menu-panel">
+        <div class="mobile-menu-header">
+          <img src="Img/logo.png" alt="NaijaShield logo" class="mobile-logo" />
+          <button class="close-menu" id="closeMenu" type="button" aria-label="Close navigation menu"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <nav class="mobile-nav" aria-label="Mobile navigation">
+          <a href="/#home">Home</a>
+          <a href="/#services">Services</a>
+          <a href="/#about">About</a>
+          <a href="/#industries">Industries</a>
+          <a href="/#solutions">Solutions</a>
+          <a href="/#blog">Blog</a>
+          <a href="/#contact">Contact</a>
+          <button class="toggle-btn mobile-toggle" type="button" data-theme-toggle>Light Mode</button>
+        </nav>
+        <div class="mobile-menu-cta">
+          <a class="btn primary" href="/register">Register Client</a>
+          <a class="btn secondary" href="/client">Client Portal</a>
+          <a class="btn secondary" href="/admin">Admin Portal</a>
+        </div>
+      </div>
+    </div>
+
+    <main id="marketingPage">
+      <section class="hero" id="home">
+        <div>
+          <h1>Protecting <span>Africa's</span> Digital Future</h1>
+          <p>
+            Advanced cybersecurity solutions for businesses, governments, and organizations.
+            NaijaShield combines expert cyber defense with a secure client portal for reports,
+            tickets, service requests, and security posture tracking.
+          </p>
+          <div class="btn-group">
+            <a class="btn primary" href="/register">Register as Client</a>
+            <a class="btn secondary" href="/client">Client Sign in</a>
+            <a class="btn secondary" href="/admin">Admin Sign in</a>
+          </div>
+
+          <div class="hero-dashboard">
+            <div class="dashboard-header">
+              <span>Live SOC Snapshot</span>
+              <div class="dashboard-chip">AI Threat Feed</div>
+            </div>
+            <div class="dashboard-grid">
+              <div class="dashboard-tile"><span>Threats blocked</span><strong>1,482</strong></div>
+              <div class="dashboard-tile"><span>Active alerts</span><strong>03</strong></div>
+              <div class="dashboard-tile"><span>Detection rate</span><strong>99.9%</strong></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="shield">
+            <img src="Img/logo.png" alt="NaijaShield logo" />
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-title">
+          <h2>Trusted by Organizations</h2>
+          <p>Delivering cybersecurity resilience for modern enterprises across Africa.</p>
+        </div>
+        <div class="stats-grid">
+          <div class="stat-card"><div class="stat-number" data-target="24">24</div><h3>24/7 Monitoring</h3><p>Continuous security operations center monitoring.</p></div>
+          <div class="stat-card"><div class="stat-number" data-target="99">99</div><h3>99.9% Detection</h3><p>Advanced threat visibility and response workflows.</p></div>
+          <div class="stat-card"><div class="stat-number" data-target="150">150</div><h3>Protected Networks</h3><p>Protecting critical digital infrastructure.</p></div>
+          <div class="stat-card"><div class="stat-number" data-target="5000">5000</div><h3>Threats Blocked</h3><p>Real-time security intelligence and response.</p></div>
+        </div>
+        <div class="client-logos">
+          <div class="client-logo">Banking</div>
+          <div class="client-logo">Government</div>
+          <div class="client-logo">Telecom</div>
+          <div class="client-logo">Healthcare</div>
+          <div class="client-logo">Education</div>
+          <div class="client-logo">Oil & Gas</div>
+        </div>
+      </section>
+
+      <section id="services">
+        <div class="section-title">
+          <h2>Cybersecurity Services</h2>
+          <p>Enterprise security solutions built for African businesses and global standards.</p>
+        </div>
+        <div class="services-grid">
+          <div class="service-card"><div class="service-icon"><i class="fa-solid fa-lock"></i></div><h3>Managed Security</h3><ul><li>SOC Monitoring</li><li>Incident Response</li><li>SIEM Management</li></ul></div>
+          <div class="service-card"><div class="service-icon"><i class="fa-solid fa-shield-halved"></i></div><h3>Penetration Testing</h3><ul><li>Web App Testing</li><li>Mobile Testing</li><li>Network Testing</li></ul></div>
+          <div class="service-card"><div class="service-icon"><i class="fa-solid fa-cloud"></i></div><h3>Cloud Security</h3><ul><li>AWS Security</li><li>Azure & GCP Audits</li><li>Cloud Risk Assessment</li></ul></div>
+          <div class="service-card"><div class="service-icon"><i class="fa-solid fa-graduation-cap"></i></div><h3>Training</h3><ul><li>Awareness Training</li><li>Ethical Hacking</li><li>Corporate Workshops</li></ul></div>
+          <div class="service-card"><div class="service-icon"><i class="fa-solid fa-brain"></i></div><h3>Threat Intelligence</h3><ul><li>Attack Monitoring</li><li>Threat Hunting</li><li>Cyber Risk Analysis</li></ul></div>
+          <div class="service-card"><div class="service-icon"><i class="fa-solid fa-file-shield"></i></div><h3>Compliance & Governance</h3><ul><li>ISO 27001</li><li>NDPR Compliance</li><li>Risk Assessment</li></ul></div>
+        </div>
+      </section>
+
+      <section>
+        <div class="why-us">
+          <div class="why-image" aria-hidden="true"></div>
+          <div class="why-content">
+            <div class="section-title left"><h2>Why Choose NaijaShield</h2></div>
+            <div class="feature"><div class="feature-icon"><i class="fa-solid fa-earth-africa"></i></div><div><h3>Nigerian Expertise</h3><p>Built for African cyber defense challenges and realities.</p></div></div>
+            <div class="feature"><div class="feature-icon"><i class="fa-solid fa-bolt"></i></div><div><h3>Fast Incident Response</h3><p>Rapid threat containment and response systems.</p></div></div>
+            <div class="feature"><div class="feature-icon"><i class="fa-solid fa-robot"></i></div><div><h3>AI-Powered Defense</h3><p>Intelligent cyber analytics and predictive detection.</p></div></div>
+            <div class="feature"><div class="feature-icon"><i class="fa-solid fa-headset"></i></div><div><h3>24/7 Support</h3><p>Continuous enterprise-grade security operations.</p></div></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="threat-section">
+        <div class="section-title">
+          <h2>Live Cyber Threat Intelligence</h2>
+          <p>Real-time visibility into evolving cyber threats and digital attack patterns.</p>
+        </div>
+        <div class="threat-map" aria-hidden="true">
+          <div class="threat-dot" style="top:20%; left:15%;"></div>
+          <div class="threat-dot" style="top:40%; left:65%;"></div>
+          <div class="threat-dot" style="top:65%; left:35%;"></div>
+          <div class="threat-dot" style="top:25%; left:75%;"></div>
+          <div class="threat-dot" style="top:70%; left:80%;"></div>
+        </div>
+      </section>
+
+      <section id="about">
+        <div class="about-grid">
+          <div>
+            <div class="section-title left"><h2>Who We Are</h2></div>
+            <p>NaijaShield Technologies is a modern African cybersecurity company focused on protecting digital infrastructure across governments, enterprises, SMEs, and critical sectors.</p>
+            <p>Our mission is to secure Africa's digital future through innovation, intelligence, AI-powered defense systems, and world-class cyber resilience solutions.</p>
+            <a class="btn primary" href="/register">Start Client Onboarding</a>
+            <div class="founder-card">
+              <div class="founder-photo"><img src="Img/Ceo.jpg" alt="NaijaShield CEO" /></div>
+              <div>
+                <strong>Founder & CEO</strong>
+                <h3>Leading African cyber defense with trust and innovation.</h3>
+                <p>Local intelligence, global standards, and secure portal workflows for every client.</p>
+              </div>
+            </div>
+          </div>
+          <div class="about-image" aria-hidden="true"></div>
+        </div>
+      </section>
+
+      <section id="industries">
+        <div class="section-title">
+          <h2>Industries We Serve</h2>
+          <p>Protecting mission-critical industries with enterprise cybersecurity.</p>
+        </div>
+        <div class="industries-grid">
+          <div class="industry-card"><h3><i class="fa-solid fa-building-columns"></i> Banking</h3></div>
+          <div class="industry-card"><h3><i class="fa-solid fa-landmark"></i> Government</h3></div>
+          <div class="industry-card"><h3><i class="fa-solid fa-graduation-cap"></i> Education</h3></div>
+          <div class="industry-card"><h3><i class="fa-solid fa-tower-cell"></i> Telecom</h3></div>
+          <div class="industry-card"><h3><i class="fa-solid fa-oil-well"></i> Oil & Gas</h3></div>
+          <div class="industry-card"><h3><i class="fa-solid fa-briefcase"></i> SMEs</h3></div>
+          <div class="industry-card"><h3><i class="fa-solid fa-hospital"></i> Healthcare</h3></div>
+        </div>
+      </section>
+
+      <section id="solutions">
+        <div class="section-title">
+          <h2>Security Solutions</h2>
+          <p>Practical defense packages for organizations that need visibility, response, and compliance without delay.</p>
+        </div>
+        <div class="services-grid">
+          <div class="service-card"><div class="service-icon"><i class="fa-solid fa-seedling"></i></div><h3>ShieldStart</h3><p>Baseline review, awareness, vulnerability checks, and remediation guidance.</p></div>
+          <div class="service-card"><div class="service-icon"><i class="fa-solid fa-satellite-dish"></i></div><h3>ShieldOps</h3><p>Managed monitoring, incident response planning, SIEM support, and reports.</p></div>
+          <div class="service-card"><div class="service-icon"><i class="fa-solid fa-building-shield"></i></div><h3>ShieldEnterprise</h3><p>Full security program support for regulated and critical organizations.</p></div>
+        </div>
+      </section>
+
+      <section id="blog">
+        <div class="section-title">
+          <h2>Threat Intelligence Blog</h2>
+          <p>Latest cybersecurity insights, awareness, and digital defense updates.</p>
+        </div>
+        <div class="blog-grid">
+          <div class="blog-card"><h3>How to Prevent Phishing Attacks</h3><p>Learn the latest phishing detection and prevention strategies.</p></div>
+          <div class="blog-card"><h3>Nigeria's Evolving Cyber Threat Landscape</h3><p>Understanding modern attack patterns targeting organizations.</p></div>
+          <div class="blog-card"><h3>AI Security & Future Cyber Defense</h3><p>How artificial intelligence is transforming cybersecurity.</p></div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="section-title">
+          <h2>Secure Your Organization Today</h2>
+          <p>Contact NaijaShield Technologies for advanced cybersecurity solutions.</p>
+        </div>
+        <div class="contact-section">
+          <div class="contact-box">
+            <h3>Contact Information</h3>
+            <p>Abuja, Nigeria</p>
+            <p><a href="tel:+2347066069899">+234 706 606 9899</a></p>
+            <p><a href="mailto:info@naijashield.ng">info@naijashield.ng</a></p>
+            <a class="btn primary" href="https://wa.me/2347066069899" target="_blank" rel="noopener">WhatsApp Support</a>
+          </div>
+          <div class="contact-box">
+            <form class="contact-form">
+              <input type="text" placeholder="Full Name" required />
+              <input type="email" placeholder="Email Address" required />
+              <input type="text" placeholder="Organization" />
+              <textarea placeholder="Tell us about your cybersecurity needs"></textarea>
+              <button class="btn primary" type="submit">Request Consultation</button>
+              <p class="form-status" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <main class="portal-shell" id="portalApp" hidden>
+      <section class="portal-card">
+        <div class="portal-header">
+          <div>
+            <p class="eyebrow">NaijaShield Cyber Portal</p>
+            <h1 id="portalTitle">Portal</h1>
+            <p id="portalSubtitle">Secure access for clients and NaijaShield administrators.</p>
+          </div>
+          <div class="session-actions">
+            <span id="activeUser">Not signed in</span>
+            <button class="btn secondary" id="logoutBtn" type="button" hidden>Sign out</button>
+          </div>
+        </div>
+
+        <div class="login-card" id="loginCard">
+          <div>
+            <h3 id="loginTitle">Sign in</h3>
+            <p id="loginHelp">Use your NaijaShield account to continue.</p>
+            <div class="demo-switcher">
+              <button class="btn secondary" id="useClientDemo" type="button">Use client demo</button>
+              <button class="btn secondary" id="useAdminDemo" type="button">Use admin demo</button>
+            </div>
+          </div>
+          <form id="loginForm">
+            <label>Email <input name="email" type="email" value="client@example.com" required /></label>
+            <label>Password <input name="password" type="password" value="client123" required /></label>
+            <button class="btn primary" type="submit">Sign in</button>
+            <p class="form-note">Client: client@example.com / client123<br />Admin: admin@naijashield.ng / admin123</p>
+            <p class="status" id="loginStatus" role="status"></p>
+          </form>
+        </div>
+
+        <div class="login-card" id="registerCard" hidden>
+          <div>
+            <h3>Register as a New Client</h3>
+            <p>Create a client account and begin onboarding with NaijaShield.</p>
+          </div>
+          <form id="registerForm">
+            <label>Full Name <input name="name" required /></label>
+            <label>Email <input name="email" type="email" required /></label>
+            <label>Password <input name="password" type="password" minlength="6" required /></label>
+            <label>Company <input name="companyName" required /></label>
+            <label>Industry <input name="industry" placeholder="Banking, Education, Healthcare..." /></label>
+            <button class="btn primary" type="submit">Create Client Account</button>
+            <p class="status" id="registerStatus" role="status"></p>
+          </form>
+        </div>
+
+        <div class="dashboard" id="dashboard" hidden>
+          <aside class="dashboard-sidebar">
+            <strong id="workspaceName">Workspace</strong>
+            <a href="#overview">Overview</a>
+            <a href="#requests">Requests</a>
+            <a href="#tickets">Tickets</a>
+            <a href="#reports">Reports</a>
+            <a class="admin-only" href="#clients" hidden>Clients</a>
+          </aside>
+          <div class="dashboard-main">
+            <div class="metric-row" id="metrics"></div>
+            <div class="workspace-grid" id="overview">
+              <section class="workspace-card" id="requests"><div class="card-head"><h3>Service Requests</h3><span id="requestCount">0</span></div><div class="list" id="requestList"></div></section>
+              <section class="workspace-card" id="tickets"><div class="card-head"><h3>Support Tickets</h3><span id="ticketCount">0</span></div><div class="list" id="ticketList"></div></section>
+              <section class="workspace-card" id="reports"><div class="card-head"><h3>Reports</h3><span id="reportCount">0</span></div><div class="list" id="reportList"></div></section>
+              <section class="workspace-card"><div class="card-head"><h3>Activity</h3><span>Live</span></div><div class="list" id="activityList"></div></section>
+            </div>
+            <div class="action-grid">
+              <form class="action-card" id="requestForm"><h3>Request a Service</h3><label>Service<select name="service" required><option>Penetration Testing</option><option>Cloud Security Audit</option><option>NDPR / ISO Compliance Review</option><option>Cybersecurity Training</option><option>Incident Response</option></select></label><label>Priority<select name="priority"><option>Medium</option><option>High</option><option>Critical</option><option>Low</option></select></label><label class="admin-only" hidden>Company<select name="companyId" id="requestCompany"></select></label><label>Summary<textarea name="summary" placeholder="Tell us what you need secured..." required></textarea></label><button class="btn primary" type="submit">Submit request</button><p class="status" id="requestStatus" role="status"></p></form>
+              <form class="action-card" id="ticketForm"><h3>Open a Support Ticket</h3><label>Subject<input name="subject" placeholder="Short incident title" required /></label><label>Severity<select name="severity"><option>Low</option><option>Medium</option><option>High</option><option>Critical</option></select></label><label class="admin-only" hidden>Company<select name="companyId" id="ticketCompany"></select></label><label>Message<textarea name="message" placeholder="Describe the issue..." required></textarea></label><button class="btn primary" type="submit">Open ticket</button><p class="status" id="ticketStatus" role="status"></p></form>
+            </div>
+            <section class="workspace-card admin-panel" id="adminPanel" hidden><div class="card-head"><h3>Admin Client Overview</h3><span>NaijaShield team</span></div><div class="table-wrap"><table><thead><tr><th>Company</th><th>Industry</th><th>Plan</th><th>Score</th><th>Compliance</th><th>Next review</th></tr></thead><tbody id="companyTable"></tbody></table></div></section>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-grid">
+        <div><h4>NaijaShield Technologies</h4><p>Protect. Detect. Defend.</p></div>
+        <div><h4>Quick Links</h4><a href="/#about">About</a><a href="/#services">Services</a><a href="/#solutions">Solutions</a><a href="mailto:info@naijashield.ng?subject=Careers%20at%20NaijaShield">Careers</a></div>
+        <div><h4>Portal</h4><a href="/client">Client Sign in</a><a href="/admin">Admin Sign in</a><a href="/register">Register Client</a></div>
+        <div><h4>Newsletter</h4><p>Stay updated on cyber threats and security news.</p><form class="newsletter-form"><input type="email" placeholder="Your Email" required /><button class="btn primary" type="submit">Join</button><p class="form-status" role="status" aria-live="polite"></p></form></div>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://twitter.com/" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
+      <div class="copyright">© 2026 NaijaShield Technologies. All Rights Reserved.</div>
+    </footer>
+
+    <button class="chat-widget" type="button" aria-label="Open NaijaShield chat"><i class="fa-solid fa-comment-dots"></i></button>
+    <div class="chat-modal" id="chatModal" aria-hidden="true">
+      <div class="chat-window">
+        <div class="chat-header">
+          <span>Ask NaijaShield AI</span>
+          <button class="chat-close" type="button" aria-label="Close chat"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="chat-body">
+          <p>Ask about threat intelligence, incident response, compliance, or cybersecurity training.</p>
+        </div>
+        <form class="chat-input chat-form">
+          <input type="text" placeholder="Type your security question" required />
+          <button type="submit" class="btn primary">Send</button>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
