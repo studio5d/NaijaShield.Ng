@@ -1,0 +1,2 @@
+-- Example initial migration. Run `npm run prisma:migrate -- --name init` to create managed migrations.
+-- This file documents the intended database shape generated from prisma/schema.prisma.

@@ -1,0 +1,17 @@
+{
+  "name": "naijashield-portal",
+  "version": "1.0.0",
+  "description": "Full-stack cybersecurity client portal MVP for NaijaShield Technologies.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "cybersecurity",
+    "client-portal",
+    "naijashield"
+  ],
+  "author": "NaijaShield Technologies",
+  "license": "UNLICENSED"
+}

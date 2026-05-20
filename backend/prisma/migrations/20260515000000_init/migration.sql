@@ -1,0 +1,3 @@
+-- Initial migration placeholder.
+-- Generate the executable SQL from schema.prisma with:
+-- npx prisma migrate dev --name init
